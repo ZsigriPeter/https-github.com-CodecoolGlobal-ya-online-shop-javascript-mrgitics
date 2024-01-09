@@ -1,0 +1,20 @@
+.product {
+    width: 23%;
+    margin-bottom: 10px;
+}
+
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    border: 1px solid black;
+    overflow: hidden;
+}
+
+.product-img {
+    max-width: fit-content;
+    max-height: fit-content;
+    width: 80%;
+    height: 80%;
+    object-fit: cover;
+}
