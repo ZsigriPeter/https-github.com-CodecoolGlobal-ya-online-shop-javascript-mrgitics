@@ -62,7 +62,7 @@
         "description": "A vial filled with sparkling fairy dust, said to bring luck and positive energy.",
         "price": 34.99,
         "inventory": 25,
-        "image": "fairy_dust_vial.jpg"
+        "image": "https://i.etsystatic.com/11067450/r/il/cbc0b0/971017810/il_570xN.971017810_puwf.jpg"
       },
       {
         "id": 9,
@@ -70,7 +70,7 @@
         "description": "A lantern that emits an ethereal glow, believed to attract and communicate with spirits.",
         "price": 109.99,
         "inventory": 8,
-        "image": "ghostly_lantern.jpg"
+        "image": "https://images.fun.com/products/65352/2-1-175815/hidden-ghost-face-lantern-light-up-prop-.jpg"
       },
       {
         "id": 10,
@@ -78,7 +78,7 @@
         "description": "A talisman crafted from a rare moonstone, known for enhancing intuition and psychic abilities.",
         "price": 79.99,
         "inventory": 15,
-        "image": "moonstone_talisman.jpg"
+        "image": "https://cdn11.bigcommerce.com/s-pk1jh/images/stencil/1280x1280/products/1780/10433/lasertrees-higher-self-talisman-rainbow-moonstone-labradorite-charoite-and-amethyst-gemstone-grid-talisman__25161.1670016711.jpg?c=2"
       },
       {
         "id": 11,
@@ -86,7 +86,7 @@
         "description": "Earrings said to capture the haunting wail of a banshee, invoking protection and foresight.",
         "price": 49.99,
         "inventory": 20,
-        "image": "banshee_earrings.jpg"
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGmSzVoF6krlTNwOo_MF8_ZxXI9P_x4Hr2_K2stP5gpzxUJXPjd1T1Za8PdvJ-xpcTNCY&usqp=CAU"
       },
       {
         "id": 12,
@@ -94,7 +94,7 @@
         "description": "A necklace adorned with a genuine dragon scale, believed to grant strength and courage.",
         "price": 129.99,
         "inventory": 10,
-        "image": "dragon_scale_necklace.jpg"
+        "image": "https://ksr-ugc.imgix.net/assets/037/087/973/4c33653739e21aa12d4ef519bbfaa87a_original.jpg?ixlib=rb-4.1.0&crop=faces&w=1552&h=873&fit=crop&v=1650879097&auto=format&frame=1&q=92&s=825e84606efd6ce40d8697edb58ea8fb"
       },
       {
         "id": 13,
@@ -102,7 +102,7 @@
         "description": "A magical potion made from the tears of a mermaid, rumored to bring emotional healing.",
         "price": 44.99,
         "inventory": 22,
-        "image": "mermaid_tears_potion.jpg"
+        "image": "https://i.etsystatic.com/17182590/r/il/6291a5/5302508535/il_fullxfull.5302508535_qjts.jpg"
       },
       {
         "id": 14,
@@ -110,7 +110,7 @@
         "description": "An amulet containing a sharp werewolf claw, believed to offer protection during the full moon.",
         "price": 79.99,
         "inventory": 12,
-        "image": "werewolf_claw_amulet.jpg"
+        "image": "https://www.celticcrystaldesign.com/cdn/shop/products/il_fullxfull.2438932763_gqc3_2019x.jpg?v=1610046293"
       },
       {
         "id": 15,
@@ -118,7 +118,7 @@
         "description": "A wand crafted from a rare mystic crystal, channeling energy for spellcasting and rituals.",
         "price": 119.99,
         "inventory": 15,
-        "image": "mystic_crystal_wand.jpg"
+        "image": "https://i.pinimg.com/736x/d4/d3/c7/d4d3c70e76c732a535903de5125e004f.jpg"
       }
     ]
   }
