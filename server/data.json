@@ -1,0 +1,125 @@
+{
+    "artifacts": [
+      {
+        "id": 1,
+        "name": "Enchanted Crystal Ball",
+        "description": "A mystical crystal ball with the power of scrying and divination.",
+        "price": 99.99,
+        "inventory": 10,
+        "image": "enchanted_crystal_ball.jpg"
+      },
+      {
+        "id": 2,
+        "name": "Phoenix Feather Wand",
+        "description": "A wand crafted from a genuine phoenix feather, perfect for casting powerful spells.",
+        "price": 129.99,
+        "inventory": 8,
+        "image": "phoenix_feather_wand.jpg"
+      },
+      {
+        "id": 3,
+        "name": "Cursed Mirror of Reflection",
+        "description": "A mirror with a dark history, said to reflect the true nature of those who gaze into it.",
+        "price": 79.99,
+        "inventory": 15,
+        "image": "cursed_mirror.jpg"
+      },
+      {
+        "id": 4,
+        "name": "Vampire Fang Amulet",
+        "description": "An amulet containing a genuine vampire fang, believed to offer protection against supernatural forces.",
+        "price": 149.99,
+        "inventory": 5,
+        "image": "vampire_fang_amulet.jpg"
+      },
+      {
+        "id": 5,
+        "name": "Haunted Ouija Board",
+        "description": "A classic Ouija board with a spooky twist, rumored to communicate with spirits.",
+        "price": 69.99,
+        "inventory": 12,
+        "image": "haunted_ouija_board.jpg"
+      },
+      {
+        "id": 6,
+        "name": "Witch's Broomstick",
+        "description": "A traditional broomstick imbued with magical properties, perfect for flying.",
+        "price": 89.99,
+        "inventory": 20,
+        "image": "witch_broomstick.jpg"
+      },
+      {
+        "id": 7,
+        "name": "Eldritch Rune Stones",
+        "description": "A set of ancient rune stones, believed to harness mystical energies for various purposes.",
+        "price": 59.99,
+        "inventory": 18,
+        "image": "eldritch_rune_stones.jpg"
+      },
+      {
+        "id": 8,
+        "name": "Glowing Fairy Dust Vial",
+        "description": "A vial filled with sparkling fairy dust, said to bring luck and positive energy.",
+        "price": 34.99,
+        "inventory": 25,
+        "image": "fairy_dust_vial.jpg"
+      },
+      {
+        "id": 9,
+        "name": "Ghostly Lantern",
+        "description": "A lantern that emits an ethereal glow, believed to attract and communicate with spirits.",
+        "price": 109.99,
+        "inventory": 8,
+        "image": "ghostly_lantern.jpg"
+      },
+      {
+        "id": 10,
+        "name": "Moonstone Talisman",
+        "description": "A talisman crafted from a rare moonstone, known for enhancing intuition and psychic abilities.",
+        "price": 79.99,
+        "inventory": 15,
+        "image": "moonstone_talisman.jpg"
+      },
+      {
+        "id": 11,
+        "name": "Banshee's Wail Earrings",
+        "description": "Earrings said to capture the haunting wail of a banshee, invoking protection and foresight.",
+        "price": 49.99,
+        "inventory": 20,
+        "image": "banshee_earrings.jpg"
+      },
+      {
+        "id": 12,
+        "name": "Dragon's Scale Necklace",
+        "description": "A necklace adorned with a genuine dragon scale, believed to grant strength and courage.",
+        "price": 129.99,
+        "inventory": 10,
+        "image": "dragon_scale_necklace.jpg"
+      },
+      {
+        "id": 13,
+        "name": "Mermaid's Tears Potion",
+        "description": "A magical potion made from the tears of a mermaid, rumored to bring emotional healing.",
+        "price": 44.99,
+        "inventory": 22,
+        "image": "mermaid_tears_potion.jpg"
+      },
+      {
+        "id": 14,
+        "name": "Werewolf Claw Amulet",
+        "description": "An amulet containing a sharp werewolf claw, believed to offer protection during the full moon.",
+        "price": 79.99,
+        "inventory": 12,
+        "image": "werewolf_claw_amulet.jpg"
+      },
+      {
+        "id": 15,
+        "name": "Mystic Crystal Wand",
+        "description": "A wand crafted from a rare mystic crystal, channeling energy for spellcasting and rituals.",
+        "price": 119.99,
+        "inventory": 15,
+        "image": "mystic_crystal_wand.jpg"
+      }
+    ]
+  }
+  
