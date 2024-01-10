@@ -23,7 +23,20 @@ app.get('/api', async (req, res) => {
     const artifacts = JSON.parse(data).artifacts;
 
     return res.json(artifacts)
-})
+});
+
+app.get('/api/:id', async (req, res) => {
+    const data = await fs.readFile('./data.json', 'utf8');
+    const { artifacts } = JSON.parse(data);
+    const artifactID = parseInt(req.params.id);
+    const artifact = artifacts.find((artifact) => artifact.id === artifactID);
+
+    if (artifact) {
+        return res.send(artifact);
+    } else {
+        return res.status(404).send('User not found');
+    };
+});
 
 app.get('/artifact', (req, res ) => {
     res.sendFile(path.join(__dirname, "../client/public.html"));
