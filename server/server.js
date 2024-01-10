@@ -25,18 +25,42 @@ app.get('/api', async (req, res) => {
     return res.json(artifacts)
 });
 
-app.get('/api/:id', async (req, res) => {
+async function findById(id) {
     const data = await fs.readFile('./data.json', 'utf8');
     const { artifacts } = JSON.parse(data);
-    const artifactID = parseInt(req.params.id);
+    const artifactID = id;
     const artifact = artifacts.find((artifact) => artifact.id === artifactID);
+    return artifact;
+}
 
+app.get('/api/:id', async (req, res) => {
+    const id = parseInt(req.params.id);
+    const artifact=await findById(id);
     if (artifact) {
         return res.send(artifact);
     } else {
         return res.status(404).send('Product not found');
     };
 });
+
+async function addOneProductToJson(file,product) {
+    const data = await fs.readFile(`./${file}`, "utf8");
+    const artifacts = JSON.parse(data);
+
+    artifacts.artifacts.push(product);
+
+    await fs.writeFile(`./${file}`,JSON.stringify(artifacts),'utf8');
+
+    return artifacts.artifacts.length;
+
+}
+
+app.post('/cart/:id',async (req,res) => {
+    const id = parseInt(req.params.id);
+    const artifact=await findById(id);
+    const productCount=await addOneProductToJson('cart.json',artifact);
+    res.send(`${productCount}`);
+})
 
 app.get('/artifact', (req, res ) => {
     res.sendFile(path.join(__dirname, "../client/public.html"));
