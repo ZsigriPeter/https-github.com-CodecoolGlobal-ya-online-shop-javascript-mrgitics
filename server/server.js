@@ -34,7 +34,7 @@ app.get('/api/:id', async (req, res) => {
     if (artifact) {
         return res.send(artifact);
     } else {
-        return res.status(404).send('User not found');
+        return res.status(404).send('Product not found');
     };
 });
 

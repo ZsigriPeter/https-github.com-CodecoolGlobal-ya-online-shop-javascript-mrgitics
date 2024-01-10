@@ -20,14 +20,14 @@ function createProductElement(product, mode) {
     productElement.insertAdjacentElement('beforeend', productPrice);
     if (mode === 'buy') {
         if (product.inventory > 0) {
-            productElement.insertAdjacentElement('beforeend', createButtonElement('Add to cart', product.id));
+            productElement.insertAdjacentElement('beforeend', createButtonElement('Add to cart', product.id, mode));
         } else {
             const outOfStock = document.createElement('h3');
             outOfStock.innerText = 'Out Of Stock';
             productElement.insertAdjacentElement('beforeend', outOfStock);
         }
     } else {
-        productElement.insertAdjacentElement('beforeend', createButtonElement('Edit Product', product.id));
+        productElement.insertAdjacentElement('beforeend', createButtonElement('Edit Product', product.id, mode));
     }
 
     return productElement;
@@ -45,12 +45,12 @@ async function fetchData(url) {
     }
 }
 
-async function renderHTML(root,mode) {
+async function renderHTML(root, mode) {
     const products = await fetchData('/api');
     const productElements = document.createElement('div');
     productElements.classList.add('products');
     products.forEach(product => {
-        const currentProduct = createProductElement(product,mode);
+        const currentProduct = createProductElement(product, mode);
         productElements.insertAdjacentElement('beforeend', currentProduct);
     });
     root.insertAdjacentElement('beforeend', productElements);
@@ -85,7 +85,7 @@ async function makeEditorHtml() {
     editorProductList.id = 'editorProductList';
     editorProductList.classList.add('products');
     editorPage.appendChild(editorProductList);
-    await renderHTML(editorProductList,'editor');
+    await renderHTML(editorProductList, 'edit');
 
     document.body.appendChild(editorPage);
 }
@@ -111,7 +111,7 @@ async function makeClientHtml() {
     clientProductList.id = 'clientProductList';
     clientProductList.classList.add('products');
     clientPage.appendChild(clientProductList);
-    await renderHTML(clientProductList,'buy');
+    await renderHTML(clientProductList, 'buy');
 
     document.body.appendChild(clientPage);
 }
@@ -131,22 +131,32 @@ async function switchPage(pageId) {
     };
 };
 
-function createButtonElement(innerText, id) {
+function createButtonElement(innerText, id, classHTML) {
     const buttonElement = document.createElement('button');
     buttonElement.innerText = innerText
     buttonElement.id = id
+    buttonElement.classList.add(classHTML);
     return buttonElement;
+}
+
+function allClicks() {
+    document.addEventListener('click', (event) => {
+        if (event.target.tagName === 'BUTTON') {
+            if (event.target.classList.contains('buy')) {
+                console.log('buy');
+            }
+            if (event.target.classList.contains('edit')) {
+                console.log('edit');
+            }
+        }
+    });
 }
 
 
 
-
-
-
 function main() {
-    const root = document.querySelector('#root');
-    makeHTMLPages()
-
+    makeHTMLPages();
+    allClicks();
 
 
 
