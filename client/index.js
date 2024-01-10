@@ -80,7 +80,7 @@ async function makeEditorHtml() {
 
     };
     editorPage.appendChild(editorSwitchButton);
-
+    editorPage.appendChild(createButtonElement('Add Product', '', 'add'));
     const editorProductList = document.createElement('div');
     editorProductList.id = 'editorProductList';
     editorProductList.classList.add('products');
@@ -141,6 +141,56 @@ function createButtonElement(innerText, id, classHTML) {
     return buttonElement;
 }
 
+function createSubmitButton(type, innerText, method) {
+    const buttonElement = document.createElement('button');
+    buttonElement.type = type;
+    buttonElement.innerText = innerText;
+    
+    buttonElement.method = method;
+    return buttonElement;
+}
+
+function inputElement (placeholder, className, value) {
+    const inputElement = document.createElement('input');
+    inputElement.placeholder = placeholder;
+    inputElement.className = className;
+    inputElement.value = value;
+
+    return inputElement;
+};
+
+function createModal (artifact, callback) {
+    const modal = document.createElement('div');
+    modal.classList.add('modal');
+modal.appendChild(callback(artifact))
+    return modal;
+};
+
+function checkModal () {
+    const existingModal = document.querySelector('.modal');
+    
+        existingModal.remove();
+}
+
+function toggleModal() {
+    const modal = document.querySelector('.modal');
+    modal.classList.toggle('show');
+};
+
+function createForm(artifact) {
+    const formElement = document.createElement('form');
+    formElement.setAttribute('data-id', artifact.id);
+    formElement.appendChild(inputElement('name', 'name', artifact.name));
+    formElement.appendChild(inputElement('description', 'description', artifact.description));
+    formElement.appendChild(inputElement('price', 'price', artifact.price));
+    formElement.appendChild(inputElement('inventory', 'inventory', artifact.inventory))
+    formElement.appendChild(inputElement('image', 'image', artifact.image))
+    formElement.appendChild(createSubmitButton('submit', 'change', "PUT"))
+    formElement.appendChild(createSubmitButton('submit', 'update', "PATCH"))
+    formElement.appendChild(createSubmitButton('submit', 'delete', "DELETE"))
+    formElement.appendChild(createButtonElement('close', '', 'close'))
+    return formElement
+}
 async function addProductToCart(id) {
     const response=await fetch(`/cart/${id}`,{
         method: "POST",
@@ -152,17 +202,26 @@ async function addProductToCart(id) {
 }
 
 function allClicks() {
-    document.addEventListener('click', (event) => {
+    document.addEventListener('click', async (event) => {
         if (event.target.tagName === 'BUTTON') {
             if (event.target.classList.contains('buy')) {
                 addProductToCart(event.target.id);
             }
             if (event.target.classList.contains('edit')) {
                 console.log('edit');
+                const index = parseInt(event.target.parentElement.id);
+                console.log(index)
+                const artifact = await fetchData(`/api/${index}`);
+                const modal = createModal(artifact, createForm);
+                document.body.appendChild(modal);
+                toggleModal()
+
             }
         }
     });
 }
+
+
 
 
 
