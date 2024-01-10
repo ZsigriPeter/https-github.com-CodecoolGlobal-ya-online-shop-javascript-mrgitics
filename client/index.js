@@ -107,6 +107,8 @@ async function makeClientHtml() {
     };
     clientPage.appendChild(clientSwitchButton);
 
+    clientPage.appendChild(createButtonElement('Check Out','','checkout'));
+
     const clientProductList = document.createElement('div');
     clientProductList.id = 'clientProductList';
     clientProductList.classList.add('products');
@@ -189,12 +191,21 @@ function createForm(artifact) {
     formElement.appendChild(createButtonElement('close', '', 'close'))
     return formElement
 }
+async function addProductToCart(id) {
+    const response=await fetch(`/cart/${id}`,{
+        method: "POST",
+        body: "DONE"
+    });
+    const cartCount = await response.json();
+    const button=document.querySelector('.checkout');
+    button.innerText=`Check Out (${cartCount})`;
+}
 
 function allClicks() {
     document.addEventListener('click', async (event) => {
         if (event.target.tagName === 'BUTTON') {
             if (event.target.classList.contains('buy')) {
-                console.log('buy');
+                addProductToCart(event.target.id);
             }
             if (event.target.classList.contains('edit')) {
                 console.log('edit');
