@@ -1,4 +1,5 @@
 import express from "express";
+import { writeFile } from "fs";
 import fs from "fs/promises";
 import path from "path";
 import url from "url";
@@ -42,6 +43,79 @@ app.get('/api/:id', async (req, res) => {
         return res.status(404).send('Product not found');
     };
 });
+
+app.patch('/api/:id', async (req, res) =>{
+   
+    putPatch (req, res)
+});
+
+app.delete('/api/:id', async (req, res) => {
+    const data = await fs.readFile(dataRoute, 'utf8');
+    const { artifacts } = JSON.parse(data);
+    const artifactId = parseInt(req.params.id);
+    const artifact = artifacts.find((artifact) => artifact.id === artifactId);
+
+    if (artifact) {
+        const newInventory = artifacts.filter((x) => x.id !== artifactId);
+        await fs.writeFile(dataRoute, JSON.stringify({artifacts: newInventory}), 'utf8');
+        return res.send({ state: 'DONE'});
+    } else {
+        return res.status(404).send({ state: 'user not found'});
+    }
+});
+
+app.put('/api/:id', async (req, res) =>{
+   
+    putPatch (req, res)
+});
+
+async function putPatch (req, res) {
+    const data = await fs.readFile(dataRoute, 'utf8');
+    const { artifacts } = JSON.parse(data);
+    console.log(artifacts);
+    const artifactId = parseInt(req.params.id);
+    const artifact = artifacts.find((artifact) => artifact.id === artifactId);
+
+
+    if (artifact) {
+        artifact.name = req.body.name || '';
+        artifact.description = req.body.description || '';
+        artifact.price = req.body.price || ''
+        artifact.inventory = req.body.inventory || '';
+        artifact.image = req.body.image || '';
+
+
+        await fs.writeFile(dataRoute, JSON.stringify({ artifacts }), 'utf8');
+        return res.send({ state: "DONE"});
+    } else {
+        return res.status(404).send({ state: 'User not found'});
+    }
+}
+
+app.post('/api', async (req, res) => {
+    const data = await fs.readFile(dataRoute, 'utf8');
+    const { artifacts } = JSON.parse(data);
+    const artifactId = artifacts.map(artifact => artifact.id);
+    const maxId = Math.max(...artifactId);
+
+    const newItem = {
+        id: maxId+1,
+        name: req.body.name || "",
+        description: req.body.description || '',
+        price: req.body.price || '',
+        inventory: req.body.inventory || '',
+        image: req.body.image || '',
+
+    };
+
+    artifacts.push(newItem);
+    await fs.writeFile(dataRoute, JSON.stringify({ artifacts }), 'utf8');
+    return res.send({ state: "DONE"});
+})
+
+
+
+
 
 async function addOneProductToJson(file,product) {
     const data = await fs.readFile(`./${file}`, "utf8");
