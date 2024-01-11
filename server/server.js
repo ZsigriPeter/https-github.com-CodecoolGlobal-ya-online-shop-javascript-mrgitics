@@ -60,7 +60,7 @@ app.delete('/api/:id', async (req, res) => {
         await fs.writeFile(dataRoute, JSON.stringify({artifacts: newInventory}), 'utf8');
         return res.send({ state: 'DONE'});
     } else {
-        return res.status(404).send({ state: 'user not found'});
+        return res.status(404).send({ state: 'Product not found'});
     }
 });
 
@@ -88,7 +88,7 @@ async function putPatch (req, res) {
         await fs.writeFile(dataRoute, JSON.stringify({ artifacts }), 'utf8');
         return res.send({ state: "DONE"});
     } else {
-        return res.status(404).send({ state: 'User not found'});
+        return res.status(404).send({ state: 'Product not found'});
     }
 }
 
