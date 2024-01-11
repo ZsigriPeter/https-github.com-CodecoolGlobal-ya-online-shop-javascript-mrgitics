@@ -28,10 +28,27 @@ function createProductElement(product, mode) {
         }
     } else {
         productElement.insertAdjacentElement('beforeend', createButtonElement('Edit Product', product.id, mode));
-    }
+    };
 
     return productElement;
-}
+};
+
+async function appMethods(method, id, body = {
+    'name': '',
+    'description': '',
+    'price': '',
+    'inventory': '',
+    'image': '',
+}) {
+    const response = await fetch(`/api/${id}`, {
+        method: method,
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(body)
+    });
+    console.log(response);
+    const data = await response.json();
+    return data;
+};
 
 
 
@@ -42,8 +59,8 @@ async function fetchData(url) {
         return data;
     } catch {
         console.error(error);
-    }
-}
+    };
+};
 
 async function renderHTML(root, mode) {
     const products = await fetchData('/api');
@@ -54,14 +71,14 @@ async function renderHTML(root, mode) {
         productElements.insertAdjacentElement('beforeend', currentProduct);
     });
     root.insertAdjacentElement('beforeend', productElements);
-}
+};
 
 async function makeHTMLPages() {
 
-    await makeEditorHtml()
+    await makeEditorHtml();
 
-    await makeClientHtml()
-}
+    await makeClientHtml();
+};
 
 async function makeEditorHtml() {
     const editorPage = document.createElement('div');
@@ -88,7 +105,7 @@ async function makeEditorHtml() {
     await renderHTML(editorProductList, 'edit');
 
     document.body.appendChild(editorPage);
-}
+};
 
 async function makeClientHtml() {
     const clientPage = document.createElement('div');
@@ -107,6 +124,8 @@ async function makeClientHtml() {
     };
     clientPage.appendChild(clientSwitchButton);
 
+    clientPage.appendChild(createButtonElement('Check Out', '', 'checkout'));
+
     const clientProductList = document.createElement('div');
     clientProductList.id = 'clientProductList';
     clientProductList.classList.add('products');
@@ -114,7 +133,7 @@ async function makeClientHtml() {
     await renderHTML(clientProductList, 'buy');
 
     document.body.appendChild(clientPage);
-}
+};
 
 async function switchPage(pageId) {
     const editorPage = document.getElementById('editorPage');
@@ -133,22 +152,22 @@ async function switchPage(pageId) {
 
 function createButtonElement(innerText, id, classHTML) {
     const buttonElement = document.createElement('button');
-    buttonElement.innerText = innerText
-    buttonElement.id = id
+    buttonElement.innerText = innerText;
+    buttonElement.id = id;
     buttonElement.classList.add(classHTML);
     return buttonElement;
-}
+};
 
 function createSubmitButton(type, innerText, method) {
     const buttonElement = document.createElement('button');
     buttonElement.type = type;
     buttonElement.innerText = innerText;
-    
-    buttonElement.method = method;
-    return buttonElement;
-}
 
-function inputElement (placeholder, className, value) {
+    buttonElement.setAttribute('data-method', method);
+    return buttonElement;
+};
+
+function inputElement(placeholder, className, value) {
     const inputElement = document.createElement('input');
     inputElement.placeholder = placeholder;
     inputElement.className = className;
@@ -157,37 +176,112 @@ function inputElement (placeholder, className, value) {
     return inputElement;
 };
 
-function createModal (artifact, callback) {
+function createModal(artifact, callback) {
     const modal = document.createElement('div');
     modal.classList.add('modal');
-modal.appendChild(callback(artifact))
+    modal.appendChild(callback(artifact));
     return modal;
 };
 
-function checkModal () {
+function checkModal() {
     const existingModal = document.querySelector('.modal');
-    
+    if (existingModal) {
         existingModal.remove();
-}
+    };
+};
 
 function toggleModal() {
     const modal = document.querySelector('.modal');
     modal.classList.toggle('show');
 };
 
+function createFormToAdd() {
+    const formElement = document.createElement('form');
+    formElement.classList.add('form')
+    formElement.appendChild(inputElement('name', 'name', ''));
+    formElement.appendChild(inputElement('description', 'description', ''));
+    formElement.appendChild(inputElement('price', 'price', ''));
+    formElement.appendChild(inputElement('inventory', 'inventory', ''))
+    formElement.appendChild(inputElement('image', 'image', ''))
+    formElement.appendChild(createSubmitButton('submit', 'add', "POST"))
+    formElement.appendChild(createButtonElement('close', '', 'close'))
+    return formElement;
+};
+
 function createForm(artifact) {
     const formElement = document.createElement('form');
     formElement.setAttribute('data-id', artifact.id);
+    formElement.classList.add('form')
     formElement.appendChild(inputElement('name', 'name', artifact.name));
     formElement.appendChild(inputElement('description', 'description', artifact.description));
     formElement.appendChild(inputElement('price', 'price', artifact.price));
-    formElement.appendChild(inputElement('inventory', 'inventory', artifact.inventory))
-    formElement.appendChild(inputElement('image', 'image', artifact.image))
-    formElement.appendChild(createSubmitButton('submit', 'change', "PUT"))
-    formElement.appendChild(createSubmitButton('submit', 'update', "PATCH"))
-    formElement.appendChild(createSubmitButton('submit', 'delete', "DELETE"))
-    formElement.appendChild(createButtonElement('close', '', 'close'))
-    return formElement
+    formElement.appendChild(inputElement('inventory', 'inventory', artifact.inventory));
+    formElement.appendChild(inputElement('image', 'image', artifact.image));
+    formElement.appendChild(createSubmitButton('submit', 'change', "PUT"));
+    formElement.appendChild(createSubmitButton('submit', 'update', "PATCH"));
+    formElement.appendChild(createSubmitButton('submit', 'delete', "DELETE"));
+    formElement.appendChild(createButtonElement('close', '', 'close'));
+    return formElement;
+};
+
+async function handleSubmit(e) {
+    e.preventDefault();
+
+    const method = e.submitter.getAttribute('data-method');
+    const id = parseInt(e.target.getAttribute('data-id'));
+
+
+    let result;
+
+    if (method === "PATCH" || method === "PUT") {
+        result = await appMethods(method, id, {
+            name: e.target.querySelector('.name').value,
+            description: e.target.querySelector('.description').value,
+            price: e.target.querySelector('.price').value,
+            inventory: e.target.querySelector('.inventory').value,
+            image: e.target.querySelector('.image').value,
+        });
+    };
+    if (method === "POST") {
+        result = await appMethods('POST', '', {
+            name: e.target.querySelector('.name').value,
+            description: e.target.querySelector('.description').value,
+            price: e.target.querySelector('.price').value,
+            inventory: e.target.querySelector('.inventory').value,
+            image: e.target.querySelector('.image').value,
+        });
+    };
+
+    if (method === "DELETE") {
+        result = await appMethods("DELETE", id, {
+            id: id
+        });
+    };
+
+    if (result.state === 'DONE') {
+        location.reload();
+    };
+};
+
+
+function getBody(form) {
+    const body = {
+        name: form.querySelector('.name').value,
+        description: form.querySelector('.description').value,
+        price: form.querySelector('.price').value,
+        inventory: form.querySelector('.inventory').value,
+        image: form.querySelector('.image').value,
+    };
+};
+
+async function addProductToCart(id) {
+    const response=await fetch(`/cart/${id}`,{
+        method: "POST",
+        body: "DONE"
+    });
+    const cartCount = await response.json();
+    const button=document.querySelector('.checkout');
+    button.innerText=`Check Out (${cartCount})`;
 }
 
 function allClicks() {
@@ -195,20 +289,40 @@ function allClicks() {
         if (event.target.tagName === 'BUTTON') {
             if (event.target.classList.contains('buy')) {
                 console.log('buy');
-            }
+                addProductToCart(event.target.id);
+            };
             if (event.target.classList.contains('edit')) {
-                console.log('edit');
+                checkModal();
                 const index = parseInt(event.target.parentElement.id);
-                console.log(index)
                 const artifact = await fetchData(`/api/${index}`);
-                const modal = createModal(artifact, createForm);
-                document.body.appendChild(modal);
-                toggleModal()
+                eventModal(artifact, createForm);
 
+            };
+            if (event.target.classList.contains('add')) {
+                console.log(event.target.classList);
+                checkModal();
+                eventModal('', createFormToAdd);
+            };
+            if (event.target.classList.contains('close')) {
+                checkModal()
             }
         }
+       
+
     });
 }
+
+
+function eventModal(param, callback) {
+    const modal = createModal(param, callback);
+    document.body.appendChild(modal);
+    toggleModal();
+    const form = modal.querySelector('.form');
+    form.addEventListener('submit', async (e) => {
+        await handleSubmit(e);
+        checkModal();
+    });
+};
 
 
 
@@ -220,5 +334,5 @@ function main() {
 
 
 
-}
+};
 main();
