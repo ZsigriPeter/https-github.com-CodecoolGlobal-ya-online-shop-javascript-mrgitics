@@ -1,1 +1,124 @@
-{"artifacts":[{"id":1,"name":"Enchanted Crystal Ball","description":"A mystical crystal ball with the power of scrying and divination.","price":"99.99","inventory":"10","image":"https://img.freepik.com/premium-photo/enchanted-crystal-ball-generative-ai_851708-692.jpg"},{"id":2,"name":"Phoenix Feather Wand","description":"A wand crafted from a genuine phoenix feather, perfect for casting powerful spells.","price":"129.99","inventory":"8","image":"https://pm1.aminoapps.com/6910/fc412203a75ed8103134580fbf2db698f5684708r1-1000-1000v2_00.jpg"},{"id":3,"name":"Cursed Mirror of Reflection","description":"A mirror with a dark history, said to reflect the true nature of those who gaze into it.","price":79.99,"inventory":15,"image":"https://www.dublincity.ie/sites/default/files/styles/inline_image/public/2021-09/spooky-mirror.png.webp?itok=MTOG1ugh"},{"id":4,"name":"Vampire Fang Amulet","description":"An amulet containing a genuine vampire fang, believed to offer protection against supernatural forces.","price":149.99,"inventory":5,"image":"https://lzd-img-global.slatic.net/g/p/66b89e814daf31f6842d4ad8a8303c09.jpg_360x360q75.jpg_.webp"},{"id":5,"name":"Haunted Ouija Board","description":"A classic Ouija board with a spooky twist, rumored to communicate with spirits.","price":69.99,"inventory":12,"image":"https://cdn-prod.medicalnewstoday.com/content/images/articles/322/322863/ouija-board.jpg"},{"id":6,"name":"Witch's Broomstick","description":"A traditional broomstick imbued with magical properties, perfect for flying.","price":89.99,"inventory":20,"image":"https://i.ebayimg.com/images/g/DbkAAOSw8EBlNob3/s-l1200.webp"},{"id":7,"name":"Eldritch Rune Stones","description":"A set of ancient rune stones, believed to harness mystical energies for various purposes.","price":59.99,"inventory":18,"image":"https://ksr-ugc.imgix.net/assets/031/836/531/d0e9f72dad2cc397e8c33ccc5a71892a_original.JPG?ixlib=rb-4.1.0&w=680&fit=max&v=1608957294&gif-q=50&q=92&s=4f7e55fca8ae4bd8bfe50065e97d5e9d"},{"id":8,"name":"Glowing Fairy Dust Vial","description":"A vial filled with sparkling fairy dust, said to bring luck and positive energy.","price":34.99,"inventory":25,"image":"https://i.etsystatic.com/11067450/r/il/cbc0b0/971017810/il_570xN.971017810_puwf.jpg"},{"id":9,"name":"Ghostly Lantern","description":"A lantern that emits an ethereal glow, believed to attract and communicate with spirits.","price":109.99,"inventory":8,"image":"https://images.fun.com/products/65352/2-1-175815/hidden-ghost-face-lantern-light-up-prop-.jpg"},{"id":10,"name":"Moonstone Talisman","description":"A talisman crafted from a rare moonstone, known for enhancing intuition and psychic abilities.","price":79.99,"inventory":15,"image":"https://cdn11.bigcommerce.com/s-pk1jh/images/stencil/1280x1280/products/1780/10433/lasertrees-higher-self-talisman-rainbow-moonstone-labradorite-charoite-and-amethyst-gemstone-grid-talisman__25161.1670016711.jpg?c=2"},{"id":11,"name":"Banshee's Wail Earrings","description":"Earrings said to capture the haunting wail of a banshee, invoking protection and foresight.","price":49.99,"inventory":20,"image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGmSzVoF6krlTNwOo_MF8_ZxXI9P_x4Hr2_K2stP5gpzxUJXPjd1T1Za8PdvJ-xpcTNCY&usqp=CAU"},{"id":12,"name":"Dragon's Scale Necklace","description":"A necklace adorned with a genuine dragon scale, believed to grant strength and courage.","price":"129.99","inventory":"10","image":"https://ksr-ugc.imgix.net/assets/037/087/973/4c33653739e21aa12d4ef519bbfaa87a_original.jpg?ixlib=rb-4.1.0&crop=faces&w=1552&h=873&fit=crop&v=1650879097&auto=format&frame=1&q=92&s=825e84606efd6ce40d8697edb58ea8fb"},{"id":13,"name":"Mermaid's Tears Potion","description":"A magical potion made from the tears of a mermaid, rumored to bring emotional healing.","price":44.99,"inventory":22,"image":"https://i.etsystatic.com/17182590/r/il/6291a5/5302508535/il_fullxfull.5302508535_qjts.jpg"},{"id":14,"name":"Werewolf Claw Amulet","description":"An amulet containing a sharp werewolf claw, believed to offer protection during the full moon.","price":79.99,"inventory":12,"image":"https://www.celticcrystaldesign.com/cdn/shop/products/il_fullxfull.2438932763_gqc3_2019x.jpg?v=1610046293"},{"id":15,"name":"Mystic Crystal Wand","description":"A wand crafted from a rare mystic crystal, channeling energy for spellcasting and rituals.","price":119.99,"inventory":15,"image":"https://i.pinimg.com/736x/d4/d3/c7/d4d3c70e76c732a535903de5125e004f.jpg"}]}
+{
+    "artifacts": [
+        {
+            "id": 1,
+            "name": "Enchanted Crystal Ball",
+            "description": "A mystical crystal ball with the power of scrying and divination.",
+            "price": 99.99,
+            "inventory": 6,
+            "image": "https://img.freepik.com/premium-photo/enchanted-crystal-ball-generative-ai_851708-692.jpg"
+        },
+        {
+            "id": 2,
+            "name": "Phoenix Feather Wand",
+            "description": "A wand crafted from a genuine phoenix feather, perfect for casting powerful spells.",
+            "price": 129.99,
+            "inventory": 7,
+            "image": "https://pm1.aminoapps.com/6910/fc412203a75ed8103134580fbf2db698f5684708r1-1000-1000v2_00.jpg"
+        },
+        {
+            "id": 3,
+            "name": "Cursed Mirror of Reflection",
+            "description": "A mirror with a dark history, said to reflect the true nature of those who gaze into it.",
+            "price": 79.99,
+            "inventory": 15,
+            "image": "https://www.dublincity.ie/sites/default/files/styles/inline_image/public/2021-09/spooky-mirror.png.webp?itok=MTOG1ugh"
+        },
+        {
+            "id": 4,
+            "name": "Vampire Fang Amulet",
+            "description": "An amulet containing a genuine vampire fang, believed to offer protection against supernatural forces.",
+            "price": 149.99,
+            "inventory": 4,
+            "image": "https://lzd-img-global.slatic.net/g/p/66b89e814daf31f6842d4ad8a8303c09.jpg_360x360q75.jpg_.webp"
+        },
+        {
+            "id": 5,
+            "name": "Haunted Ouija Board",
+            "description": "A classic Ouija board with a spooky twist, rumored to communicate with spirits.",
+            "price": 69.99,
+            "inventory": 11,
+            "image": "https://cdn-prod.medicalnewstoday.com/content/images/articles/322/322863/ouija-board.jpg"
+        },
+        {
+            "id": 6,
+            "name": "Witch's Broomstick",
+            "description": "A traditional broomstick imbued with magical properties, perfect for flying.",
+            "price": 89.99,
+            "inventory": 20,
+            "image": "https://i.ebayimg.com/images/g/DbkAAOSw8EBlNob3/s-l1200.webp"
+        },
+        {
+            "id": 7,
+            "name": "Eldritch Rune Stones",
+            "description": "A set of ancient rune stones, believed to harness mystical energies for various purposes.",
+            "price": 59.99,
+            "inventory": 18,
+            "image": "https://ksr-ugc.imgix.net/assets/031/836/531/d0e9f72dad2cc397e8c33ccc5a71892a_original.JPG?ixlib=rb-4.1.0&w=680&fit=max&v=1608957294&gif-q=50&q=92&s=4f7e55fca8ae4bd8bfe50065e97d5e9d"
+        },
+        {
+            "id": 8,
+            "name": "Glowing Fairy Dust Vial",
+            "description": "A vial filled with sparkling fairy dust, said to bring luck and positive energy.",
+            "price": 34.99,
+            "inventory": 25,
+            "image": "https://i.etsystatic.com/11067450/r/il/cbc0b0/971017810/il_570xN.971017810_puwf.jpg"
+        },
+        {
+            "id": 9,
+            "name": "Ghostly Lantern",
+            "description": "A lantern that emits an ethereal glow, believed to attract and communicate with spirits.",
+            "price": 109.99,
+            "inventory": 8,
+            "image": "https://images.fun.com/products/65352/2-1-175815/hidden-ghost-face-lantern-light-up-prop-.jpg"
+        },
+        {
+            "id": 10,
+            "name": "Moonstone Talisman",
+            "description": "A talisman crafted from a rare moonstone, known for enhancing intuition and psychic abilities.",
+            "price": 79.99,
+            "inventory": 10,
+            "image": "https://cdn11.bigcommerce.com/s-pk1jh/images/stencil/1280x1280/products/1780/10433/lasertrees-higher-self-talisman-rainbow-moonstone-labradorite-charoite-and-amethyst-gemstone-grid-talisman__25161.1670016711.jpg?c=2"
+        },
+        {
+            "id": 11,
+            "name": "Banshee's Wail Earrings",
+            "description": "Earrings said to capture the haunting wail of a banshee, invoking protection and foresight.",
+            "price": 49.99,
+            "inventory": 19,
+            "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGmSzVoF6krlTNwOo_MF8_ZxXI9P_x4Hr2_K2stP5gpzxUJXPjd1T1Za8PdvJ-xpcTNCY&usqp=CAU"
+        },
+        {
+            "id": 12,
+            "name": "Dragon's Scale Necklace",
+            "description": "A necklace adorned with a genuine dragon scale, believed to grant strength and courage.",
+            "price": "129.99",
+            "inventory": "10",
+            "image": "https://ksr-ugc.imgix.net/assets/037/087/973/4c33653739e21aa12d4ef519bbfaa87a_original.jpg?ixlib=rb-4.1.0&crop=faces&w=1552&h=873&fit=crop&v=1650879097&auto=format&frame=1&q=92&s=825e84606efd6ce40d8697edb58ea8fb"
+        },
+        {
+            "id": 13,
+            "name": "Mermaid's Tears Potion",
+            "description": "A magical potion made from the tears of a mermaid, rumored to bring emotional healing.",
+            "price": 44.99,
+            "inventory": 22,
+            "image": "https://i.etsystatic.com/17182590/r/il/6291a5/5302508535/il_fullxfull.5302508535_qjts.jpg"
+        },
+        {
+            "id": 14,
+            "name": "Werewolf Claw Amulet",
+            "description": "An amulet containing a sharp werewolf claw, believed to offer protection during the full moon.",
+            "price": 79.99,
+            "inventory": 12,
+            "image": "https://www.celticcrystaldesign.com/cdn/shop/products/il_fullxfull.2438932763_gqc3_2019x.jpg?v=1610046293"
+        },
+        {
+            "id": 15,
+            "name": "Mystic Crystal Wand",
+            "description": "A wand crafted from a rare mystic crystal, channeling energy for spellcasting and rituals.",
+            "price": 119.99,
+            "inventory": 15,
+            "image": "https://i.pinimg.com/736x/d4/d3/c7/d4d3c70e76c732a535903de5125e004f.jpg"
+        }
+    ]
+}
