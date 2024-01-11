@@ -44,6 +44,13 @@ app.get('/api/:id', async (req, res) => {
     };
 });
 
+app.get('/cart/api', async (req, res) => {
+    const data = await fs.readFile("./cart.json", "utf8");
+    const artifacts = JSON.parse(data).artifacts;
+
+    return res.json(artifacts);
+});
+
 app.patch('/api/:id', async (req, res) =>{
    
     putPatch (req, res)
@@ -69,13 +76,22 @@ app.put('/api/:id', async (req, res) =>{
     putPatch (req, res)
 });
 
+app.put('cart/api/:id', async (req, res) =>{
+   
+    putPatch (req, res)
+});
+
 async function putPatch (req, res) {
     const data = await fs.readFile(dataRoute, 'utf8');
     const { artifacts } = JSON.parse(data);
-    console.log(artifacts);
+    //console.log(artifacts);
     const artifactId = parseInt(req.params.id);
     const artifact = artifacts.find((artifact) => artifact.id === artifactId);
 
+    
+
+    console.log(req.params.id);
+    //console.log(req.body);
 
     if (artifact) {
         artifact.name = req.body.name || '';
@@ -84,6 +100,7 @@ async function putPatch (req, res) {
         artifact.inventory = req.body.inventory || '';
         artifact.image = req.body.image || '';
 
+        console.log(artifact);
 
         await fs.writeFile(dataRoute, JSON.stringify({ artifacts }), 'utf8');
         return res.send({ state: "DONE"});
@@ -134,6 +151,17 @@ app.post('/cart/:id',async (req,res) => {
     const artifact=await findById(id);
     const productCount=await addOneProductToJson('cart.json',artifact);
     res.send(`${productCount}`);
+})
+
+app.delete('/cart', async (req,res) => {
+    const data = await fs.readFile(`./cart.json`, "utf8");
+    const artifacts = JSON.parse(data);
+
+    artifacts.artifacts=[];
+    console.log(artifacts);
+
+    await fs.writeFile(`./cart.json`,JSON.stringify(artifacts),'utf8');
+    res.send('Cart Reset');
 })
 
 app.get('/artifact', (req, res ) => {

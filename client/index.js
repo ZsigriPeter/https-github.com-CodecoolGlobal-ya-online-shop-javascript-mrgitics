@@ -1,5 +1,5 @@
 
-
+const currency=' $';
 
 function createProductElement(product, mode) {
     const productElement = document.createElement('div');
@@ -16,7 +16,7 @@ function createProductElement(product, mode) {
     productDescription.innerText = product.description;
     productElement.insertAdjacentElement('beforeend', productDescription);
     const productPrice = document.createElement('p');
-    productPrice.innerText = product.price;
+    productPrice.innerText = product.price+currency;
     productElement.insertAdjacentElement('beforeend', productPrice);
     if (mode === 'buy') {
         if (product.inventory > 0) {
@@ -224,6 +224,35 @@ function createForm(artifact) {
     return formElement;
 };
 
+function checkoutForm(cartContent) {
+    const formElement = document.createElement('form');
+    formElement.setAttribute('data-id', 'checkout-form');
+    formElement.classList.add('form');
+    let totalP=0;
+    cartContent.forEach(product => {
+        const nameElement=document.createElement('span');
+        nameElement.innerText=product.name+'    ';
+        formElement.appendChild(nameElement);
+
+        const priceElement=document.createElement('span');
+        priceElement.innerText=product.price+currency;
+        priceElement.style.color='red';
+        formElement.appendChild(priceElement);
+        formElement.appendChild(document.createElement('br'));
+
+        totalP+=parseFloat(product.price);
+
+    });
+    const totalPrice=document.createElement('h3');
+    totalPrice.innerText=`Total Price: ${totalP.toFixed(2)}${currency}`;
+    formElement.appendChild(totalPrice);
+
+    formElement.appendChild(createSubmitButton('submit', 'Buy Now', "PUT"));
+
+    return formElement;
+
+}
+
 async function handleSubmit(e) {
     e.preventDefault();
 
@@ -305,8 +334,32 @@ function allClicks() {
             };
             if (event.target.classList.contains('close')) {
                 checkModal()
-            };
-        };
+            }
+            if(event.target.classList.contains('checkout')) {
+                const cartContent = await fetchData(`/cart/api`);
+                const cartModal=createModal(cartContent,checkoutForm);
+                document.body.appendChild(cartModal);
+                toggleModal();
+            }
+            if(event.target.tagName==='BUTTON' && event.target.innerText==='Buy Now') {
+                console.log('Click Buy Now');
+                const cartContent = await fetchData(`/cart/api`);
+                cartContent.forEach(async (product) => {
+                    product.inventory--;
+                    console.log(product);
+                    await fetch(`/api/${product.id}`,{
+                        method: "PUT",
+                        headers: {'Content-type': 'application/json'},
+                        body: JSON.stringify(product)
+                    });
+                });
+                await fetch('/cart',{
+                    method: "DELETE",
+                    body: 'Cart Reset'
+                });
+
+            }
+        }
        
 
     });
