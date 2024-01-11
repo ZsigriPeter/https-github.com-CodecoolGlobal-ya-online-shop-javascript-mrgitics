@@ -267,7 +267,7 @@ async function handleSubmit(e) {
             name: e.target.querySelector('.name').value,
             description: e.target.querySelector('.description').value,
             price: e.target.querySelector('.price').value,
-            inventory: e.target.querySelector('.inventory').value,
+            inventory: parseInt(e.target.querySelector('.inventory').value),
             image: e.target.querySelector('.image').value,
         });
     };
@@ -276,7 +276,7 @@ async function handleSubmit(e) {
             name: e.target.querySelector('.name').value,
             description: e.target.querySelector('.description').value,
             price: e.target.querySelector('.price').value,
-            inventory: e.target.querySelector('.inventory').value,
+            inventory: parseInt(e.target.querySelector('.inventory').value),
             image: e.target.querySelector('.image').value,
         });
     };
