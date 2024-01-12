@@ -1,5 +1,5 @@
 
-const currency=' $';
+const currency = ' $';
 
 function createProductElement(product, mode) {
     const productElement = document.createElement('div');
@@ -16,7 +16,7 @@ function createProductElement(product, mode) {
     productDescription.innerText = product.description;
     productElement.insertAdjacentElement('beforeend', productDescription);
     const productPrice = document.createElement('p');
-    productPrice.innerText = product.price+currency;
+    productPrice.innerText = product.price + currency;
     productElement.insertAdjacentElement('beforeend', productPrice);
     if (mode === 'buy') {
         if (product.inventory > 0) {
@@ -100,7 +100,7 @@ async function makeEditorHtml() {
     editorPage.appendChild(createButtonElement('Add Product', '', 'add'));
     const editorProductList = document.createElement('div');
     editorProductList.id = 'editorProductList';
-    editorProductList.classList.add('products');
+    editorProductList.classList.add('items');
     editorPage.appendChild(editorProductList);
     await renderHTML(editorProductList, 'edit');
 
@@ -128,7 +128,7 @@ async function makeClientHtml() {
 
     const clientProductList = document.createElement('div');
     clientProductList.id = 'clientProductList';
-    clientProductList.classList.add('products');
+    clientProductList.classList.add('items');
     clientPage.appendChild(clientProductList);
     await renderHTML(clientProductList, 'buy');
 
@@ -176,24 +176,21 @@ function inputElement(placeholder, className, value) {
     return inputElement;
 };
 
-function createModal(artifact, callback) {
+function createModal(callback, argument) {
     const modal = document.createElement('div');
     modal.classList.add('modal');
-    modal.appendChild(callback(artifact));
+    modal.appendChild(callback(argument));
+    modal.classList.toggle('show');
     return modal;
 };
 
-function checkModal() {
+function removeModal() {
     const existingModal = document.querySelector('.modal');
     if (existingModal) {
         existingModal.remove();
     };
 };
 
-function toggleModal() {
-    const modal = document.querySelector('.modal');
-    modal.classList.toggle('show');
-};
 
 function createFormToAdd() {
     const formElement = document.createElement('form');
@@ -228,26 +225,27 @@ function checkoutForm(cartContent) {
     const formElement = document.createElement('form');
     formElement.setAttribute('data-id', 'checkout-form');
     formElement.classList.add('form');
-    let totalP=0;
+    let totalP = 0;
     cartContent.forEach(product => {
-        const nameElement=document.createElement('span');
-        nameElement.innerText=product.name+'    ';
+        const nameElement = document.createElement('span');
+        nameElement.innerText = product.name + '    ';
         formElement.appendChild(nameElement);
 
-        const priceElement=document.createElement('span');
-        priceElement.innerText=product.price+currency;
-        priceElement.style.color='red';
+        const priceElement = document.createElement('span');
+        priceElement.innerText = product.price + currency;
+        priceElement.style.color = 'red';
         formElement.appendChild(priceElement);
         formElement.appendChild(document.createElement('br'));
 
-        totalP+=parseFloat(product.price);
+        totalP += parseFloat(product.price);
 
     });
-    const totalPrice=document.createElement('h3');
-    totalPrice.innerText=`Total Price: ${totalP.toFixed(2)}${currency}`;
+    const totalPrice = document.createElement('h3');
+    totalPrice.innerText = `Total Price: ${totalP.toFixed(2)}${currency}`;
     formElement.appendChild(totalPrice);
 
     formElement.appendChild(createSubmitButton('submit', 'Buy Now', "PUT"));
+    formElement.appendChild(createButtonElement('close', '', 'close'))
 
     return formElement;
 
@@ -304,13 +302,13 @@ function getBody(form) {
 };
 
 async function addProductToCart(id) {
-    const response=await fetch(`/cart/${id}`,{
+    const response = await fetch(`/cart/${id}`, {
         method: "POST",
         body: "DONE"
     });
     const cartCount = await response.json();
-    const button=document.querySelector('.checkout');
-    button.innerText=`Check Out (${cartCount})`;
+    const button = document.querySelector('.checkout');
+    button.innerText = `Check Out (${cartCount})`;
 }
 
 function allClicks() {
@@ -321,7 +319,7 @@ function allClicks() {
                 addProductToCart(event.target.id);
             };
             if (event.target.classList.contains('edit')) {
-                checkModal();
+                removeModal();
                 const index = parseInt(event.target.parentElement.id);
                 const artifact = await fetchData(`/api/${index}`);
                 eventModal(artifact, createForm);
@@ -329,51 +327,51 @@ function allClicks() {
             };
             if (event.target.classList.contains('add')) {
                 console.log(event.target.classList);
-                checkModal();
+                removeModal();
                 eventModal('', createFormToAdd);
             };
             if (event.target.classList.contains('close')) {
-                checkModal()
-            }
-            if(event.target.classList.contains('checkout')) {
+                removeModal()
+            };
+            if (event.target.classList.contains('checkout')) {
                 const cartContent = await fetchData(`/cart/api`);
-                const cartModal=createModal(cartContent,checkoutForm);
+                const cartModal = createModal(checkoutForm, cartContent);
                 document.body.appendChild(cartModal);
-                toggleModal();
+
             }
-            if(event.target.tagName==='BUTTON' && event.target.innerText==='Buy Now') {
+            if (event.target.tagName === 'BUTTON' && event.target.innerText === 'Buy Now') {
                 console.log('Click Buy Now');
                 const cartContent = await fetchData(`/cart/api`);
                 cartContent.forEach(async (product) => {
                     product.inventory--;
                     console.log(product);
-                    await fetch(`/api/${product.id}`,{
+                    await fetch(`/api/${product.id}`, {
                         method: "PUT",
-                        headers: {'Content-type': 'application/json'},
+                        headers: { 'Content-type': 'application/json' },
                         body: JSON.stringify(product)
                     });
                 });
-                await fetch('/cart',{
+                await fetch('/cart', {
                     method: "DELETE",
                     body: 'Cart Reset'
                 });
 
-            }
-        }
-       
+            };
+        };
+
 
     });
-}
+};
 
 
-function eventModal(param, callback) {
+function eventModal(callback, param) {
     const modal = createModal(param, callback);
     document.body.appendChild(modal);
-    toggleModal();
+
     const form = modal.querySelector('.form');
     form.addEventListener('submit', async (e) => {
         await handleSubmit(e);
-        checkModal();
+        removeModal();
     });
 };
 

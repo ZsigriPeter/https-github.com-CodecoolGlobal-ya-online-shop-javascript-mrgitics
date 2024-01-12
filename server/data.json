@@ -1,19 +1,18 @@
-
 {
     "artifacts": [
         {
             "id": 1,
-            "name": "Enchanted Crystal Ball",
+            "name": "Enchanted Crystal Balls",
             "description": "A mystical crystal ball with the power of scrying and divination.",
-            "price": 99.99,
-            "inventory": 6,
+            "price": "99.99",
+            "inventory": 3,
             "image": "https://img.freepik.com/premium-photo/enchanted-crystal-ball-generative-ai_851708-692.jpg"
         },
         {
             "id": 2,
-            "name": "Phoenix Feather Wand",
+            "name": "Feather Wand",
             "description": "A wand crafted from a genuine phoenix feather, perfect for casting powerful spells.",
-            "price": 129.99,
+            "price": "129.97",
             "inventory": 7,
             "image": "https://pm1.aminoapps.com/6910/fc412203a75ed8103134580fbf2db698f5684708r1-1000-1000v2_00.jpg"
         },
@@ -21,8 +20,8 @@
             "id": 3,
             "name": "Cursed Mirror of Reflection",
             "description": "A mirror with a dark history, said to reflect the true nature of those who gaze into it.",
-            "price": 79.99,
-            "inventory": 15,
+            "price": "79.99",
+            "inventory": 13,
             "image": "https://www.dublincity.ie/sites/default/files/styles/inline_image/public/2021-09/spooky-mirror.png.webp?itok=MTOG1ugh"
         },
         {
@@ -37,8 +36,8 @@
             "id": 5,
             "name": "Haunted Ouija Board",
             "description": "A classic Ouija board with a spooky twist, rumored to communicate with spirits.",
-            "price": 69.99,
-            "inventory": 11,
+            "price": "69ú.99",
+            "inventory": 14,
             "image": "https://cdn-prod.medicalnewstoday.com/content/images/articles/322/322863/ouija-board.jpg"
         },
         {
@@ -46,7 +45,7 @@
             "name": "Witch's Broomstick",
             "description": "A traditional broomstick imbued with magical properties, perfect for flying.",
             "price": 89.99,
-            "inventory": 20,
+            "inventory": 19,
             "image": "https://i.ebayimg.com/images/g/DbkAAOSw8EBlNob3/s-l1200.webp"
         },
         {
@@ -120,7 +119,239 @@
             "price": 119.99,
             "inventory": 15,
             "image": "https://i.pinimg.com/736x/d4/d3/c7/d4d3c70e76c732a535903de5125e004f.jpg"
+        },
+        {
+            "id": 16,
+            "name": "Time-Weaver Hourglass",
+            "description": "An hourglass with the power to manipulate time, allowing glimpses into the past and future.",
+            "price": 199.99,
+            "inventory": 5,
+            "image": "https://i.etsystatic.com/17424585/r/il/aee9b3/2014595058/il_1080xN.2014595058_b514.jpg"
+        },
+        {
+            "id": 17,
+            "name": "Sorcerer's Crystal Staff",
+            "description": "A majestic staff embedded with enchanted crystals, amplifying magical abilities.",
+            "price": 149.99,
+            "inventory": 8,
+            "image": "https://i.pinimg.com/736x/7c/21/66/7c2166d0be286db0dc5456ccf4a5f46a.jpg"
+        },
+        {
+            "id": 18,
+            "name": "Frostfire Rune Gauntlets",
+            "description": "Gauntlets inscribed with runes that control both frost and fire elements, providing dual elemental mastery.",
+            "price": 169.99,
+            "inventory": 6,
+            "image": "https://i.pinimg.com/736x/94/99/32/9499320a04fe23da27c777c48125cc9c.jpg"
+        },
+        {
+            "id": 19,
+            "name": "Celestial Star Map",
+            "description": "A mystical map of the stars that guides adventurers to hidden realms and celestial treasures.",
+            "price": 129.99,
+            "inventory": 10,
+            "image": "https://skymaps.com/store/posters/celestial-planisphere-600.jpg"
+        },
+        {
+            "id": 20,
+            "name": "Arcane Crystal Crown",
+            "description": "A regal crown adorned with arcane crystals, enhancing the wearer's mental prowess.",
+            "price": 179.99,
+            "inventory": 4,
+            "image": "https://arcanetrail.com/cdn/shop/products/chained-triple-moon-goddess-crown-crowns-crystal-jewelry-headband-arcane-trail-842_800x.jpg?v=1666741096"
+        },
+        {
+            "id": 21,
+            "name": "Songbird's Melody Pendant",
+            "description": "A pendant that resonates with the melodies of mystical songbirds, bringing peace and serenity.",
+            "price": 89.99,
+            "inventory": 15,
+            "image": "https://www.motawi.com/cdn/shop/products/songbird_Y_grande.png?v=1571438789"
+        },
+        {
+            "id": 22,
+            "name": "Thunderstorm Talon Blade",
+            "description": "A blade crafted from the talon of a thunderstorm hawk, imbued with the power of lightning.",
+            "price": 139.99,
+            "inventory": 7,
+            "image": "https://elementalknives.com/cdn/shop/products/rainbow-fade-talon-csgo-knife-talon-knife-csgo-knives-elemental-knives-csgo-skins-4734593728583.jpg?v=1573260285"
+        },
+        {
+            "id": 23,
+            "name": "Mystic Seashell Amulet",
+            "description": "An amulet containing a seashell from the depths of the mystic ocean",
+            "price": "109.99",
+            "inventory": 12,
+            "image": "https://imagedelivery.net/0ObHXyjKhN5YJrtuYFSvjQ/i-abc1c09a-47f5-490d-b343-2e6b85aa26b3-small-conch-shell-and-air-dry-resin-clay-amulet-pendant-teku-crystal-creations/display"
+        },
+        {
+            "id": 24,
+            "name": "Shadow Weaver Cloak",
+            "description": "A cloak that allows its wearer to meld with shadows, granting invisibility in low-light conditions.",
+            "price": 159.99,
+            "inventory": 9,
+            "image": "https://cdn.animebape.com/wp-content/uploads/2022/11/trippy-elements-of-magic-the-gathering-dream-cloak-coatvpwa1.jpg"
+        },
+        {
+            "id": 25,
+            "name": "Lunar Serpent Bracelet",
+            "description": "A bracelet adorned with lunar serpent scales, bestowing lunar blessings and protection.",
+            "price": 99.99,
+            "inventory": 18,
+            "image": "https://alexparkjewelry.com/cdn/shop/products/snake-cuff.png?v=1664655750"
+        },
+        {
+            "id": 26,
+            "name": "Crystalized Dreamcatcher",
+            "description": "A dreamcatcher woven with crystal threads, filtering nightmares and enhancing restful sleep.",
+            "price": 49.99,
+            "inventory": 20,
+            "image": "https://i.pinimg.com/736x/45/58/f7/4558f713df75f598d9a9f7aaef7b16d4.jpg"
+        },
+        {
+            "id": 27,
+            "name": "Magic Navigator Compass",
+            "description": "A compass that guides adventurers through astral realms and cosmic pathways.",
+            "price": 129.99,
+            "inventory": 6,
+            "image": "https://ih1.redbubble.net/image.645608690.5268/farp,small,wall_texture,product,750x1000.jpg"
+        },
+        {
+            "id": 28,
+            "name": "Flameheart Phoenix Feather Quill",
+            "description": "A quill crafted from a flameheart phoenix feather, empowering written words with fiery magic.",
+            "price": 79.99,
+            "inventory": 15,
+            "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwBQ6LBVSYvXXawOldiNPf_GSGLzCaONxsjOKF-9YoopLBWwRfTkdF34lvseEgQLoowxQ&usqp=CAU"
+        },
+        {
+            "id": 29,
+            "name": "Ethereal Crystal Earrings",
+            "description": "Earrings made from ethereal crystals, enhancing the wearer's connection to magical energies.",
+            "price": 59.99,
+            "inventory": 12,
+            "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvuBLI2cGLy2GHRBnuVYERc3pWSojxJQE79g&usqp=CAU"
+        },
+        {
+            "id": 30,
+            "name": "Eternal Phoenix Feather Quill",
+            "description": "A magical quill crafted from the eternal feathers of a phoenix, perfect for writing enchanted scrolls.",
+            "price": 159.99,
+            "inventory": 8,
+            "image": "https://i.etsystatic.com/5921394/r/il/e4a1d4/3827711061/il_570xN.3827711061_1p7d.jpg"
+        },
+        {
+            "id": 31,
+            "name": "Spectral Crystal Dagger",
+            "description": "A dagger with a blade made from a rare spectral crystal, known for its ability to cut through magical barriers.",
+            "price": 89.99,
+            "inventory": 12,
+            "image": "https://pics.craiyon.com/2023-06-27/4aad96dd2bce49e9ae7249a4e2cd6203.webp"
+        },
+        {
+            "id": 32,
+            "name": "Oracle's Tea Leaves",
+            "description": "A mystical blend of tea leaves, said to enhance divination and reveal hidden truths.",
+            "price": 29.99,
+            "inventory": 30,
+            "image": "https://www.thewhistlingkettle.com/cdn/shop/products/tea-oracle-s-prophecy-the-whistling-kettle-29915819966519.jpg?v=1690293596&width=512"
+        },
+        {
+            "id": 33,
+            "name": "Gargoyle Guardian Statue",
+            "description": "A miniature gargoyle statue believed to ward off negative energy and protect the home.",
+            "price": 49.99,
+            "inventory": 18,
+            "image": "https://i.ebayimg.com/images/g/6JIAAOSwmDNhERWI/s-l1200.webp"
+        },
+        {
+            "id": 34,
+            "name": "Eclipse Crystal Pendulum",
+            "description": "A crystal pendulum attuned to lunar and solar energies, ideal for dowsing and divination.",
+            "price": 39.99,
+            "inventory": 20,
+            "image": "https://i5.walmartimages.com/asr/3b3c1589-2985-4f93-bdc2-3f3c185ede10.3f7baff31c04b575e6729857a4c4223d.jpeg?odnHeight=768&odnWidth=768&odnBg=FFFFFF"
+        },
+        {
+            "id": 35,
+            "name": "Necromancer's Grimoire",
+            "description": "A ancient grimoire containing dark rituals and spells, not for the faint-hearted.",
+            "price": 109.99,
+            "inventory": 10,
+            "image": "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/d75552a0-7929-4b5a-8c62-f5b4fbe08a4b/dbu9hiu-fb25689b-0675-41b4-baae-ed6b1f7a8917.jpg/v1/fill/w_1024,h_1024,q_75,strp/the_necromancer_s_grimoire___bronze_edition_by_millecuirs_dbu9hiu-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTAyNCIsInBhdGgiOiJcL2ZcL2Q3NTU1MmEwLTc5MjktNGI1YS04YzYyLWY1YjRmYmUwOGE0YlwvZGJ1OWhpdS1mYjI1Njg5Yi0wNjc1LTQxYjQtYmFhZS1lZDZiMWY3YTg5MTcuanBnIiwid2lkdGgiOiI8PTEwMjQifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.eovQ-zPFz2qwaR2K6roDjd_hBTP4-RI97Jp3FoKJYk4"
+        },
+        {
+            "id": 36,
+            "name": "Chalice of Eternal Youth",
+            "description": "A mystical chalice said to grant eternal youth to those who drink from it.",
+            "price": 129.99,
+            "inventory": 5,
+            "image": "https://storage.googleapis.com/pai-images/3c93a88116e54558a805c7c48999e6ac.jpeg"
+        },
+        {
+            "id": 37,
+            "name": "Feywild Flower Crown",
+            "description": "A flower crown crafted from rare Feywild flowers, believed to connect wearers to the fae realm.",
+            "price": 69.99,
+            "inventory": 15,
+            "image": "https://i.etsystatic.com/16333351/r/il/323196/3921887844/il_fullxfull.3921887844_9fa9.jpg"
+        },
+        {
+            "id": 38,
+            "name": "Thunderstorm Crystal Globe",
+            "description": "A crystal globe that mimics thunderstorms, providing a calming and electrifying ambiance.",
+            "price": 79.99,
+            "inventory": 12,
+            "image": "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/fa0573e7-095f-4ae3-ba33-0b6a692d8e8f/dgnefzv-0a91a772-b40a-4a1a-8669-fc6b549d9af4.jpg/v1/fill/w_894,h_894,q_70,strp/glass_sphere_containing__thunderstorm__lightning__by_bashfulglowfly_dgnefzv-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTAyNCIsInBhdGgiOiJcL2ZcL2ZhMDU3M2U3LTA5NWYtNGFlMy1iYTMzLTBiNmE2OTJkOGU4ZlwvZGduZWZ6di0wYTkxYTc3Mi1iNDBhLTRhMWEtODY2OS1mYzZiNTQ5ZDlhZjQuanBnIiwid2lkdGgiOiI8PTEwMjQifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.K0WjsH6VaAgBcadiV_e7fAFTg2lP5QoXW6aAnSKN1Ic"
+        },
+        {
+            "id": 39,
+            "name": "Spirit Whisperer Earrings",
+            "description": "Earrings designed to amplify one's ability to communicate with spirits and otherworldly entities.",
+            "price": 54.99,
+            "inventory": 25,
+            "image": "https://lostlover.com/cdn/shop/products/image_3f7055f3-63d9-4d25-a66d-98aecc9d5938.jpg?v=1543647996"
+        },
+        {
+            "id": 40,
+            "name": "Serpentine Dreamcatcher",
+            "description": "A dreamcatcher woven with serpentine threads, believed to ward off nightmares and negative energy.",
+            "price": 44.99,
+            "inventory": 20,
+            "image": "https://armonizararte.com/cdn/shop/files/Large-dreamcatcher-Dream-catchers-with-crystals-Authentic-dreamcatcher-made-from-naturals-materials-Earthy-style-Unique-decor-custom-ArMoniZar-4192.webp?v=1697084949"
+        },
+        {
+            "id": 41,
+            "name": "Mystic Moon Mirror",
+            "description": "A mirror reflecting the phases of the moon, said to enhance intuition and reveal hidden insights.",
+            "price": 94.99,
+            "inventory": 8,
+            "image": "https://i.etsystatic.com/12940328/r/il/98a60c/4087470703/il_fullxfull.4087470703_gptd.jpg"
+        },
+        {
+            "id": 42,
+            "name": "Witch's Cauldron Incense Burner",
+            "description": "An intricately designed cauldron-shaped incense burner, perfect for ritualistic use.",
+            "price": 34.99,
+            "inventory": 22,
+            "image": "https://sixthings.com.au/cdn/shop/files/61eDZs-pODL._AC_UF894_1000_QL80.jpg?v=1684809133"
+        },
+        {
+            "id": 43,
+            "name": "Celestial Star Map Tapestry",
+            "description": "A tapestry featuring a celestial star map, believed to bring cosmic energies into the home.",
+            "price": 74.99,
+            "inventory": 15,
+            "image": "https://ctl.s6img.com/society6/img/wJXw5MqsQA2-5ACBxec5Q8Pzg9g/w_700/tapestries/standard/~artwork,fw_6500,fh_5525,fy_-488,iw_6500,ih_6500/s6-original-art-uploads/society6/uploads/misc/7578d82cd15244089774911a7b1452d0/~~/vintage-celestial-constellations-blue-boreal-17th-cen-star-map-star-chart-of-the-constellations-tapestries.jpg"
+        },
+        {
+            "id": 44,
+            "name": "Lunar Lullaby Music Box",
+            "description": "A music box that plays a soothing lunar lullaby, believed to bring peaceful sleep.",
+            "price": 49.99,
+            "inventory": 18,
+            "image": "https://i.etsystatic.com/6559795/r/il/73c7d1/302365618/il_570xN.302365618.jpg"
         }
+        
     ]
 }
-

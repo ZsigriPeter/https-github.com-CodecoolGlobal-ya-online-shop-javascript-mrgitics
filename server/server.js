@@ -32,7 +32,7 @@ async function findById(id) {
     const artifactID = id;
     const artifact = artifacts.find((artifact) => artifact.id === artifactID);
     return artifact;
-}
+};
 
 app.get('/api/:id', async (req, res) => {
     const id = parseInt(req.params.id);
@@ -128,7 +128,7 @@ app.post('/api', async (req, res) => {
     artifacts.push(newItem);
     await fs.writeFile(dataRoute, JSON.stringify({ artifacts }), 'utf8');
     return res.send({ state: "DONE"});
-})
+});
 
 
 
@@ -151,7 +151,7 @@ app.post('/cart/:id',async (req,res) => {
     const artifact=await findById(id);
     const productCount=await addOneProductToJson('cart.json',artifact);
     res.send(`${productCount}`);
-})
+});
 
 app.delete('/cart', async (req,res) => {
     const data = await fs.readFile(`./cart.json`, "utf8");
@@ -162,7 +162,7 @@ app.delete('/cart', async (req,res) => {
 
     await fs.writeFile(`./cart.json`,JSON.stringify(artifacts),'utf8');
     res.send('Cart Reset');
-})
+});
 
 app.get('/artifact', (req, res ) => {
     res.sendFile(path.join(__dirname, "../client/public.html"));
