@@ -4,8 +4,8 @@
             "id": 1,
             "name": "Enchanted Crystal Balls",
             "description": "A mystical crystal ball with the power of scrying and divination.",
-            "price": "99.99",
-            "inventory": 3,
+            "price": 99.99,
+            "inventory": 5,
             "image": "https://img.freepik.com/premium-photo/enchanted-crystal-ball-generative-ai_851708-692.jpg"
         },
         {
@@ -29,7 +29,7 @@
             "name": "Vampire Fang Amulet",
             "description": "An amulet containing a genuine vampire fang, believed to offer protection against supernatural forces.",
             "price": 149.99,
-            "inventory": 4,
+            "inventory": 1,
             "image": "https://lzd-img-global.slatic.net/g/p/66b89e814daf31f6842d4ad8a8303c09.jpg_360x360q75.jpg_.webp"
         },
         {
@@ -355,3 +355,4 @@
         
     ]
 }
+

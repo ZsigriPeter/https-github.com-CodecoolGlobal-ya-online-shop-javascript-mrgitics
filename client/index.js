@@ -339,7 +339,9 @@ function allClicks() {
                 document.body.appendChild(cartModal);
 
             }
-            if (event.target.tagName === 'BUTTON' && event.target.innerText === 'Buy Now') {
+
+            if(event.target.tagName==='BUTTON' && event.target.innerText==='Buy Now') {
+                event.preventDefault();
                 console.log('Click Buy Now');
                 const cartContent = await fetchData(`/cart/api`);
                 cartContent.forEach(async (product) => {
@@ -351,9 +353,8 @@ function allClicks() {
                         body: JSON.stringify(product)
                     });
                 });
-                await fetch('/cart', {
-                    method: "DELETE",
-                    body: 'Cart Reset'
+                await fetch('/cart',{
+                    method: "DELETE"
                 });
 
             };

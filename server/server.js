@@ -90,7 +90,7 @@ async function putPatch (req, res) {
 
     
 
-    console.log(req.params.id);
+    //console.log(req.params.id);
     //console.log(req.body);
 
     if (artifact) {
@@ -100,7 +100,7 @@ async function putPatch (req, res) {
         artifact.inventory = req.body.inventory || '';
         artifact.image = req.body.image || '';
 
-        console.log(artifact);
+        //console.log(artifact);
 
         await fs.writeFile(dataRoute, JSON.stringify({ artifacts }), 'utf8');
         return res.send({ state: "DONE"});
