@@ -13,6 +13,7 @@ SwiftCart is an online shop where visitors can browse magical artifacts and buy 
 - Check cart content/ Check Out
 
 ## Technologies
+- Javascript
 - Frontend: React, Vanilla CSS
 - Data: .json
 
@@ -24,7 +25,8 @@ SwiftCart is an online shop where visitors can browse magical artifacts and buy 
 ### Prerequisites
 
 Ensure the following are installed on your computer:
-- Express and npm
+- node v18.17.1
+- npm 9.6.7
 
 ### Installation
 To set up the project locally:
