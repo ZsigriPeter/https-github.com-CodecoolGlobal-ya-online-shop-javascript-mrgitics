@@ -15,7 +15,7 @@ SwiftCart is an online shop where visitors can browse magical artifacts and buy 
 ## Technologies
 - [![React]][React-url] [![Vite]][Vite-url] [![JavaScript]][JavaScript-url]
 - [![CSS]][CSS-url]
-- [![Git]][Git-url] [![Docker]][Docker-url]
+- [![Git]][Git-url]
 
 ## Developers
 - [Andor Margitics](https://github.com/mrgitics)
